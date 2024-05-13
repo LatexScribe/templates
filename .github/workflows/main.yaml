@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - templates/**
 
   workflow_dispatch:
 
@@ -21,8 +23,53 @@ jobs:
       - name: Install Poppler Utils
         run: sudo apt-get install poppler-utils
 
-      - name: Use TeX Live
+      - name: Generate Templates
         run: mkdir build && ./generate.py templates build
 
-      - name: Tree build
-        run: tree build
+      - name: Checkout LatexScribe Repository
+        uses: actions/checkout@v4
+        with:
+          repository: LatexScribe/LatexScribe
+          ref: main
+          submodules: true
+          path: LatexScribe
+          fetch-depth: 0
+          token: ${{ secrets.WORKFLOW }}
+          persist-credentials: true
+
+      - name: Remove Old Files From Repository
+        working-directory: LatexScribe
+        shell: bash
+        run: rm -r backend/src/main/resources/public/templates/*
+
+      - name: Copy new files into repository
+        working-directory: LatexScribe
+        shell: bash
+        run: cp -r ../build/* backend/src/main/resources/public/templates
+
+      - name: Check For New Files
+        id: new_files
+        shell: bash
+        working-directory: LatexScribe
+        run: |
+          git add -A
+          git status --porcelain | wc -l
+          if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then
+            echo "hasNewFiles=true" >> $GITHUB_OUTPUT
+          else
+            echo "hasNewFiles=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Get Git Commit Message
+        id: get_commit_message
+        run: echo "headCommitMsg=$(git show -s --format=%s)" >> $GITHUB_OUTPUT
+
+      - name: Commit and Push (if needed)
+        if: ${{ steps.new_files.outputs.hasNewFiles == 'true' }}
+        shell: bash
+        working-directory: LatexScribe
+        run: |
+          git config --local user.name "GitHub Action"
+          git config --local user.email "action@github.com"
+          git commit -m "[templates]: $GITHUB_SHA - ${{ steps.get_commit_message.outputs.headCommitMsg }}"
+          git push
