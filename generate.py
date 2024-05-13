@@ -68,6 +68,7 @@ for category in os.listdir(input_path):
         os.makedirs(directory, exist_ok=True)
 
         os.rename(os.path.join(build_path, "image.jpg"), os.path.join(directory, "image.jpg"))
+        os.rename(os.path.join(build_path, "source.pdf"), os.path.join(directory, "source.pdf"))
         copy_file(os.path.join(template_path, "info.json"), os.path.join(directory, "info.json"))
         copy_file(soruce_path, os.path.join(directory, "source.tex"))
 
