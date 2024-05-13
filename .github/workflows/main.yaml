@@ -18,6 +18,9 @@ jobs:
         with:
           package_file: latex_packages
 
+      - name: Install Poppler Utils
+        run: sudo apt-get install poppler-utils
+
       - name: Use TeX Live
         run: mkdir build && ./generate.py templates build
 
