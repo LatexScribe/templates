@@ -6,6 +6,8 @@ on:
     paths:
       - templates/**
       - generate.py
+      - requirements.txt
+      - latex_packages
 
   workflow_dispatch:
 
