@@ -53,7 +53,8 @@ def get_info(template_path):
 
     return [name, author, description, license_]
 
-output_info = {}
+categories = {}
+output_info = { 'categories': categories }
 
 for category in os.listdir(input_path):
     category_path = os.path.join(input_path, category)
@@ -61,8 +62,8 @@ for category in os.listdir(input_path):
         print(f"Skipping non-directory: '{category}'...")
         continue
 
-    categories = []
-    output_info[category] = categories
+    templates = []
+    categories[category] = { 'templates': templates }
 
     print(f"Processing '{category}' template category...")
     for template in os.listdir(category_path):
@@ -109,7 +110,7 @@ for category in os.listdir(input_path):
 
         remove_dir(build_path)
 
-        categories.append({
+        templates.append({
             'name': name,
             'path': template,
             'author': author,
