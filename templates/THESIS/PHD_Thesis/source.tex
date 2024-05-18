@@ -1,0 +1,230 @@
+\documentclass[12pt, oneside]{book}
+
+% Packages for fonts and graphics
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{tocloft}
+\usepackage{listings}
+\usepackage{appendix}
+\usepackage{glossaries}
+\usepackage{footnote}
+\usepackage{marginnote}
+\usepackage[toc,page]{appendix}
+\usepackage[backend=biber,style=apa]{biblatex}
+\usepackage{titlesec}
+\usepackage{mdframed}
+
+% Bibliography file
+\addbibresource{references.bib}
+
+% Custom commands
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+% Page layout
+\geometry{left=1.5in, right=1.0in, top=1.0in, bottom=1.0in}
+\setlength{\parskip}{1em}
+
+% Fancy headers and footers
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+\pagestyle{fancy}
+
+% Spacing
+\onehalfspacing
+
+% Custom chapter and section formatting
+\titleformat{\chapter}[display]
+  {\normalfont\LARGE\bfseries}
+  {\chaptertitlename\ \thechapter}{20pt}{\LARGE}
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\thesection}{1em}{}
+
+% Glossaries
+\makeglossaries
+
+% Index
+\usepackage{makeidx}
+\makeindex
+
+% Title, author, date
+\title{The Title of Your PhD Thesis}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+    \centering
+    \vspace*{1in}
+    {\Huge\bfseries The Title of Your PhD Thesis\par}
+    \vspace{1.5in}
+    {\Large\itshape Your Name\par}
+    \vfill
+    A thesis submitted in partial fulfillment of the requirements for the degree of Doctor of Philosophy in Your Field\par
+    \vfill
+    {\Large \today\par}
+\end{titlepage}
+
+% Declaration
+\clearpage
+\thispagestyle{empty}
+\section*{Declaration}
+\addcontentsline{toc}{section}{Declaration}
+I declare that this thesis is my own work and has not been submitted in any form for another degree or diploma at any university or other institution of tertiary education.
+
+% Abstract
+\clearpage
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+This is the abstract of the thesis. It provides a brief summary of the content and purpose of the thesis.
+
+% Acknowledgments
+\clearpage
+\chapter*{Acknowledgments}
+\addcontentsline{toc}{chapter}{Acknowledgments}
+I would like to thank...
+
+% Table of Contents
+\clearpage
+\tableofcontents
+
+% List of Figures
+\clearpage
+\listoffigures
+
+% List of Tables
+\clearpage
+\listoftables
+
+% Glossary
+\clearpage
+\chapter*{Glossary}
+\addcontentsline{toc}{chapter}{Glossary}
+\printglossary
+
+% Chapter 1: Introduction
+\clearpage
+\chapter{Introduction}
+\section{Background}
+Provide background information about your research topic here.
+
+\section{Problem Statement}
+State the problem your research addresses.
+
+\section{Objectives}
+List the objectives of your research.
+
+\section{Research Questions}
+List the research questions your study aims to answer.
+
+\section{Significance of the Study}
+Explain the importance of your research.
+
+\section{Structure of the Thesis}
+Outline the structure of the thesis.
+
+% Chapter 2: Literature Review
+\clearpage
+\chapter{Literature Review}
+\section{Introduction}
+Brief introduction to the literature review chapter.
+
+\section{Theoretical Framework}
+Discuss the theoretical framework relevant to your research.
+
+\section{Empirical Studies}
+Review relevant empirical studies.
+
+\section{Summary}
+Summarize the literature review chapter.
+
+% Chapter 3: Methodology
+\clearpage
+\chapter{Methodology}
+\section{Research Design}
+Describe the research design.
+
+\section{Data Collection}
+Explain the data collection methods.
+
+\section{Data Analysis}
+Describe the data analysis methods.
+
+\section{Ethical Considerations}
+Discuss ethical considerations in your research.
+
+% Chapter 4: Results
+\clearpage
+\chapter{Results}
+\section{Introduction}
+Brief introduction to the results chapter.
+
+\section{Findings}
+Present the findings of your research.
+
+% Chapter 5: Discussion
+\clearpage
+\chapter{Discussion}
+\section{Introduction}
+Brief introduction to the discussion chapter.
+
+\section{Interpretation of Findings}
+Interpret the findings of your research.
+
+\section{Comparison with Literature}
+Compare your findings with the literature reviewed.
+
+\section{Implications}
+Discuss the implications of your findings.
+
+% Chapter 6: Conclusion
+\clearpage
+\chapter{Conclusion}
+\section{Summary of Findings}
+Summarize the main findings of your research.
+
+\section{Contributions to Knowledge}
+Discuss the contributions of your research to knowledge.
+
+\section{Recommendations}
+Provide recommendations based on your findings.
+
+\section{Future Research}
+Suggest areas for future research.
+
+% Appendices
+\clearpage
+\begin{appendices}
+\chapter{Appendix A}
+Include additional material in appendices.
+
+\chapter{Appendix B}
+More additional material.
+\end{appendices}
+
+% References
+\clearpage
+\printbibliography
+
+% Index
+\clearpage
+\printindex
+
+\end{document}

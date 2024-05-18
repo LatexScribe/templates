@@ -1,0 +1,230 @@
+\documentclass[12pt, oneside]{book}
+
+% Packages for fonts and graphics
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+
+% Packages for bibliography management
+\usepackage[backend=biber,style=apa]{biblatex}
+\addbibresource{references.bib}
+
+% Package for fancy headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+
+% Package for handling table of contents
+\usepackage{tocloft}
+
+% Package for handling footnotes and margin notes
+\usepackage{marginnote}
+\usepackage{footnote}
+\makesavenoteenv{tabular}
+\makesavenoteenv{table}
+
+% Package for indexing
+\usepackage{makeidx}
+\makeindex
+
+% Package for handling code listings
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
+% Packages for handling glossaries
+\usepackage[toc]{glossaries}
+\makeglossaries
+
+% Packages for appendices
+\usepackage[toc,page]{appendix}
+
+% Custom chapter and section formatting
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\LARGE\bfseries}
+  {\chaptertitlename\ \thechapter}{20pt}{\LARGE}
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\thesection}{1em}{}
+
+% Custom environments
+\usepackage{mdframed}
+\newenvironment{summary}[1][Summary]
+  {\begin{mdframed}[backgroundcolor=gray!10]\textbf{#1}\par\medskip}
+  {\medskip\end{mdframed}}
+
+% Title, author, and date
+\title{The Title of Your Complex Book}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+% Custom Title Page
+\begin{titlepage}
+    \centering
+    \vspace*{1in}
+    {\Huge\bfseries The Title of Your Complex Book\par}
+    \vspace{1.5in}
+    {\Large\itshape Your Name\par}
+    \vfill
+    {\Large \today\par}
+\end{titlepage}
+
+% Dedication
+\clearpage
+\thispagestyle{empty}
+\vspace*{3in}
+\begin{center}
+    \textit{Dedicated to someone special}
+\end{center}
+
+% Abstract
+\clearpage
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+This is the abstract of the book. It provides a brief summary of the content and purpose of the book.
+
+% Acknowledgments
+\clearpage
+\chapter*{Acknowledgments}
+\addcontentsline{toc}{chapter}{Acknowledgments}
+I would like to thank...
+
+% Preface
+\clearpage
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+This is the preface of the book. It introduces the reader to the book and its contents.
+
+% Foreword
+\clearpage
+\chapter*{Foreword}
+\addcontentsline{toc}{chapter}{Foreword}
+This is the foreword of the book. It is typically written by someone other than the author.
+
+% Table of Contents
+\clearpage
+\tableofcontents
+
+% List of Figures
+\clearpage
+\listoffigures
+
+% List of Tables
+\clearpage
+\listoftables
+
+% Glossary
+\clearpage
+\chapter*{Glossary}
+\addcontentsline{toc}{chapter}{Glossary}
+\printglossary
+
+% Chapter 1
+\clearpage
+\chapter{Introduction}
+\section{Overview}
+This is the overview section of the introduction chapter. You can write an introduction to your book here.
+
+\section{Motivation}
+This section can be used to describe the motivation behind writing the book.
+
+\section{Organization}
+This section can outline how the book is organized.
+
+% Sample Figure
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{example-image}
+    \caption{An example image}
+    \label{fig:example-image}
+\end{figure}
+
+% Sample Table
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Column1 & Column2 & Column3 \\
+        \hline
+        Data1 & Data2 & Data3 \\
+        \hline
+    \end{tabular}
+    \caption{An example table}
+    \label{tab:example-table}
+\end{table}
+
+% Sample Mathematical Equation
+\section{Mathematical Equations}
+Here is a sample mathematical equation:
+\begin{equation}
+    E = mc^2
+\end{equation}
+
+\section{Further Discussion}
+Further discussion can go here. Use footnotes\footnote{This is a sample footnote.} and margin notes\marginnote{This is a sample margin note.} for additional information.
+
+% Summary Box
+\begin{summary}
+This is a summary of the key points discussed in this section.
+\end{summary}
+
+% Code Listings
+\section{Code Listings}
+Here is an example of a code listing:
+\begin{lstlisting}[language=Python, caption=Sample Python Code]
+def hello_world():
+    print("Hello, world!")
+\end{lstlisting}
+
+% Citations
+\section{Citations}
+Cite references using \textcite{exampleBook} and \autocite{exampleBook}.
+
+% More chapters...
+\chapter{Another Chapter}
+This is another chapter with more content.
+
+\chapter{Yet Another Chapter}
+Here is yet another chapter.
+
+\chapter{Conclusion}
+\section{Summary}
+This is the summary section of the conclusion chapter.
+
+\section{Future Work}
+This section can be used to describe future work or directions.
+
+% Appendices
+\clearpage
+\chapter*{Appendices}
+\addcontentsline{toc}{chapter}{Appendices}
+
+\begin{appendices}
+\chapter{Appendix A}
+\section{Additional Information}
+This is the first appendix.
+
+\chapter{Appendix B}
+\section{More Information}
+This is the second appendix.
+\end{appendices}
+
+% Index
+\clearpage
+\printindex
+
+% References
+\clearpage
+\printbibliography
+
+\end{document}
