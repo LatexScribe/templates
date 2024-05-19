@@ -1,0 +1,10 @@
+*.toc
+*.pdf
+*.jpg
+*.aux
+*.fls
+*.synxtex.gz
+*.fdb_latexmk
+*.log
+*.bcf
+**/build/
