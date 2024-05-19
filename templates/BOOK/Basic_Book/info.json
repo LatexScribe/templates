@@ -1,0 +1,28 @@
+{
+  "name": "Book Template",
+  "description": "A simple LaTeX template for writing a book with chapters, sections, and subsections.",
+  "author": "John Doe",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "source.tex",
+  "scripts": {
+    "build": "latexmk -pdf source.tex"
+  },
+  "dependencies": {
+    "lmodern": "latest",
+    "graphicx": "latest",
+    "hyperref": "latest",
+    "url": "latest",
+    "xcolor": "latest",
+    "biblatex": "latest"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "latex",
+    "book",
+    "template",
+    "chapters",
+    "sections",
+    "bibliography"
+  ]
+}
