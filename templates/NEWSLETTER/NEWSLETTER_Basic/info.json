@@ -1,0 +1,23 @@
+{
+  "name": "Newsletter Template",
+  "description": "A simple LaTeX template for creating a newsletter with sections for articles, news, updates, and events.",
+  "author": "John Doe",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "source.tex",
+  "scripts": {
+    "build": "latexmk -pdf source.tex"
+  },
+  "dependencies": {
+    "latex": "latest"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "latex",
+    "newsletter",
+    "template",
+    "articles",
+    "events",
+    "updates"
+  ]
+}

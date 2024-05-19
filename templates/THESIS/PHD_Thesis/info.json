@@ -1,0 +1,28 @@
+{
+  "name": "PhD Thesis Template",
+  "description": "A comprehensive LaTeX template for writing a PhD thesis, including sections for abstract, acknowledgments, introduction, literature review, methodology, results, discussion, conclusion, and references.",
+  "author": "John Doe",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "source.tex",
+  "scripts": {
+    "build": "latexmk -pdf source.tex"
+  },
+  "dependencies": {
+    "latex": "latest",
+    "amsmath": "latest",
+    "amsfonts": "latest",
+    "graphicx": "latest",
+    "hyperref": "latest",
+    "fancyhdr": "latest"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "latex",
+    "thesis",
+    "phd",
+    "template",
+    "research",
+    "dissertation"
+  ]
+}
